@@ -1,0 +1,31 @@
+<div class="option-container">
+  <p-select [options]="companies" [(ngModel)]="selectedCompany" optionLabel="name" placeholder="選一個公司"
+            class="w-full md:w-56"/>
+</div>
+
+<div class="card">
+  <p-table
+    [value]="summaries"
+    [paginator]="true"
+    [rows]="5"
+    [tableStyle]="{ 'min-width': '50rem' }"
+    [rowsPerPageOptions]="[5, 10, 20]"
+  >
+    <ng-template #header>
+      <tr>
+        <th style="width:25%">公司</th>
+        <th style="width:25%">季度</th>
+        <th style="width:25%">原始檔</th>
+        <th style="width:25%">摘要檔</th>
+      </tr>
+    </ng-template>
+    <ng-template #body let-summery>
+      <tr>
+        <td>{{ summery.company }}</td>
+        <td>{{ summery.quarter }}</td>
+        <td>{{ summery.original }}</td>
+        <td>{{ summery.summery }}</td>
+      </tr>
+    </ng-template>
+  </p-table>
+</div>
