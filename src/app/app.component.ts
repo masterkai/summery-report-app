@@ -6,11 +6,12 @@ import { Select } from 'primeng/select';
 import {SummeryService} from './summery/summery.service';
 import {ContainerComponent} from './shared/components/container/container.component';
 import {Button} from 'primeng/button';
+import {Tab, TabList, TabPanel, TabPanels, Tabs} from 'primeng/tabs';
 
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, SummeryListComponent, FormsModule, ContainerComponent, Button],
+  imports: [RouterOutlet, SummeryListComponent, FormsModule, ContainerComponent, Button, Tabs, TabList, Tab, TabPanels, TabPanel],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
