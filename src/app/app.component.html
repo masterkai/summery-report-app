@@ -8,10 +8,7 @@
     />
   </div>
 
-  <app-report-generator [show]="isDialogVisible" (close)="closeDialog()">
-    <h2>Custom Content</h2>
-    <p>This is a dialog controlled by the parent.</p>
-  </app-report-generator>
+  <app-report-generator [show]="isDialogVisible" (close)="closeDialog()" />
 
   <p-tabs value="0">
     <p-tablist>

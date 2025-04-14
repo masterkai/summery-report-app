@@ -1,0 +1,74 @@
+.dialog-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+}
+
+.dialog-box {
+  width: 40.625rem;
+  color: black;
+  background: white;
+  padding: 2.5rem;
+  border-radius: 8px;
+  min-width: 300px;
+}
+.dialog-header {
+  .title {
+    font-size: 1.25rem;
+    font-weight: 600;
+  }
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+.dialog-content {
+  .upload-block {
+    .file-upload {
+      margin-bottom: 1rem;
+    }
+    .file-name {
+      p {
+        line-height: 2;
+        flex: 1;
+      }
+      .pi-times {
+        font-size: .8rem;
+      }
+      display: flex;
+      align-items: center;
+      width: 100%;
+    }
+    .enter-file-link {
+      display: flex;
+      flex-direction: column;
+    }
+
+    flex: 1 1 35%;
+    background-color: azure;
+    padding: 1rem;
+  }
+  .input-block {
+    .generic-input {
+      display: flex;
+      flex-direction: column;
+    }
+    flex: 1 1 65%;
+  }
+  width: 100%;
+  display: flex;
+  gap: 1rem;
+}
+.submit-block {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+}
+

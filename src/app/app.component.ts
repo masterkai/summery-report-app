@@ -12,7 +12,7 @@ import {ReportGeneratorComponent} from './shared/components/report-generator/rep
   selector: 'app-root',
   imports: [RouterOutlet, SummeryListComponent, FormsModule, ContainerComponent, Button, Tabs, TabList, Tab, TabPanels, TabPanel, Dialog, ReportGeneratorComponent],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  styleUrl: './app.component.scss'
 })
 export class AppComponent {
   title = 'summary-report';
