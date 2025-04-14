@@ -1,0 +1,10 @@
+@if (show) {
+  <div class="dialog-backdrop">
+    <div class="dialog-box">
+      <h2>上傳檔案，由 LLM_生成法說會摘要報告</h2>
+      <ng-content></ng-content>
+      <button (click)="onClose()">Close</button>
+    </div>
+  </div>
+}
+

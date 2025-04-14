@@ -1,8 +1,18 @@
 <app-container>
 
   <div class="add-button">
-    <p-button icon="pi pi-plus" label="新增資料"/>
+    <p-button
+      (click)="openDialog()"
+      icon="pi pi-plus"
+      label="新增資料"
+    />
   </div>
+
+  <app-report-generator [show]="isDialogVisible" (close)="closeDialog()">
+    <h2>Custom Content</h2>
+    <p>This is a dialog controlled by the parent.</p>
+  </app-report-generator>
+
   <p-tabs value="0">
     <p-tablist>
       <p-tab value="0">法說會摘要資料</p-tab>
