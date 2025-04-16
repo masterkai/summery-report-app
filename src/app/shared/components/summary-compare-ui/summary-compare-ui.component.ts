@@ -4,13 +4,17 @@ import { Company, Summary } from '../../../../domain/summary';
 import { SummaryService } from '../../../summary/summary.service';
 import { FormsModule } from '@angular/forms';
 import { MultiSelectModule } from 'primeng/multiselect';
+import { Checkbox } from 'primeng/checkbox';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-summary-compare-ui',
   imports: [
     Select,
     MultiSelectModule,
-    FormsModule
+    FormsModule,
+    CommonModule,
+    Checkbox
   ],
   templateUrl: './summary-compare-ui.component.html',
   styleUrl: './summary-compare-ui.component.scss'
@@ -52,7 +56,7 @@ export class SummaryCompareUiComponent implements OnInit, DoCheck {
   }
 
   ngDoCheck() {
-    console.log('ngDoCheck', this.selectedSummaries);
+    // console.log('ngDoCheck', this.selectedSummaries);
   }
 
   onFilterSummaries(company: Company) {

@@ -19,6 +19,11 @@
       ></p-multiselect>
 
     </div>
-    <div class="theme-selector"></div>
+    <div class="theme-selector">
+      <div *ngFor="let theme of themes" class="flex items-center">
+        <p-checkbox [inputId]="theme.key" name="group" [value]="theme" [(ngModel)]="selectedThemes" />
+        <label [for]="theme.key" class="ml-2"> {{ theme.name }} </label>
+      </div>
+    </div>
   </div>
 </div>
