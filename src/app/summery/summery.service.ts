@@ -16,6 +16,12 @@ export class SummeryService {
         summery: 'xyz-2025Q1.txt',
       },
       {
+        company: 'XYZ',
+        quarter: '2025Q2',
+        original: 'xyz02.txt',
+        summery: 'xyz-2025Q2.txt',
+      },
+      {
         company: 'ABC',
         quarter: '2025Q2',
         original: 'abc.txt',

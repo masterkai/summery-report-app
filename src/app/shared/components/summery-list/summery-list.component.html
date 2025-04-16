@@ -1,11 +1,16 @@
 <div class="option-container">
-  <p-select [options]="companies" [(ngModel)]="selectedCompany" optionLabel="name" placeholder="選一個公司"
-            class="w-full md:w-56"/>
+  <p-select [options]="companies"
+            [(ngModel)]="selectedCompany"
+            (ngModelChange)="onCompanyChange()"
+            optionLabel="name"
+            placeholder="選一個公司"
+            class="w-full md:w-56"
+  />
 </div>
 
 <div class="card">
   <p-table
-    [value]="summaries"
+    [value]="filteredSummaries()"
     [paginator]="true"
     [rows]="5"
     [tableStyle]="{ 'min-width': '50rem' }"

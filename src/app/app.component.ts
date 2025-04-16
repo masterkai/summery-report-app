@@ -10,8 +10,9 @@ import {ReportGeneratorComponent} from './shared/components/report-generator/rep
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, SummeryListComponent, FormsModule, ContainerComponent, Button, Tabs, TabList, Tab, TabPanels, TabPanel, Dialog, ReportGeneratorComponent],
+  imports: [SummeryListComponent, FormsModule, ContainerComponent, Button, Tabs, TabList, Tab, TabPanels, TabPanel, ReportGeneratorComponent],
   templateUrl: './app.component.html',
+  standalone: true,
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
@@ -24,10 +25,5 @@ export class AppComponent {
 
   closeDialog() {
     this.isDialogVisible = false;
-  }
-  visible: boolean = false;
-
-  showDialog() {
-    this.visible = true;
   }
 }
