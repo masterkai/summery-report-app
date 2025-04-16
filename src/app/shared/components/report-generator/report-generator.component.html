@@ -37,10 +37,10 @@
             class="generic-input"
           >
             <label>*季度</label>
-            <p-datepicker
-              [style]="{width: '100%'}"
-              [(ngModel)]="quarter"
-            ></p-datepicker>
+            <div class="quarter-input-block">
+              <p-select [options]="years" [(ngModel)]="selectedYear" optionLabel="year" placeholder="Select a year" class="w-full md:w-56" />
+              <p-select [options]="quarters" [(ngModel)]="selectedQuarter" optionLabel="quarter" placeholder="Select a quarter" class="w-full md:w-56" />
+            </div>
             <small id="quarter-help">Enter your username to reset your password.</small>
           </div>
           <form

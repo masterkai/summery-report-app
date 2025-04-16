@@ -8,6 +8,8 @@ import {FormControl, FormGroup, FormsModule, ReactiveFormsModule} from '@angular
 import { DatePicker } from 'primeng/datepicker';
 import {RadioButtonModule} from 'primeng/radiobutton';
 import {Button} from 'primeng/button';
+import utils, {Quarter, Year} from '../../utils/utils';
+import {Select} from 'primeng/select';
 
 @Component({
   selector: 'app-report-generator',
@@ -17,12 +19,13 @@ import {Button} from 'primeng/button';
     FileUpload,
     InputText,
     FormsModule,
-    DatePicker,
     RadioButtonModule,
     ReactiveFormsModule,
-    Button
+    Button,
+    Select
   ],
   templateUrl: './report-generator.component.html',
+  standalone: true,
   styleUrl: './report-generator.component.scss'
 })
 export class ReportGeneratorComponent implements  OnInit {
@@ -31,7 +34,10 @@ export class ReportGeneratorComponent implements  OnInit {
   @Output() close = new EventEmitter<void>();
   fileName: string | null = null; // Property to store the file name
   companyName: string | undefined;
-  quarter: Date | undefined;
+  years: Year[] | undefined;
+  quarters: Quarter[] | undefined;
+  selectedYear: Year | undefined;
+  selectedQuarter: Quarter | undefined;
   value: string | undefined;
   formGroup!: FormGroup;
 
@@ -56,6 +62,8 @@ export class ReportGeneratorComponent implements  OnInit {
     this.formGroup = new FormGroup({
       selectedCategory: new FormControl()
     });
+    this.years = utils.yearOptionGenerator(2010);
+    this.quarters = utils.quarterOptionGenerator();
   }
 
   trackByCategoryName(index: number, category: { name: string; key: string }): string {

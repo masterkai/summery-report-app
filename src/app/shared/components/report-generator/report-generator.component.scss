@@ -57,6 +57,11 @@
   }
   .input-block {
     .generic-input {
+      .quarter-input-block {
+        display: flex;
+        flex-direction: row;
+        gap: 1rem;
+      }
       display: flex;
       flex-direction: column;
     }
