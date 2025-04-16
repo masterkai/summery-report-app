@@ -1,13 +1,13 @@
 import { TestBed } from '@angular/core/testing';
 
-import { SummeryService } from './summery.service';
+import { SummaryService } from './summary.service';
 
 describe('SummeryService', () => {
-  let service: SummeryService;
+  let service: SummaryService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    service = TestBed.inject(SummeryService);
+    service = TestBed.inject(SummaryService);
   });
 
   it('should be created', () => {

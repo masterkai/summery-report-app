@@ -1,8 +1,8 @@
-export interface Summery {
+export interface Summary {
   company: string;
   quarter: string;
   original: string;
-  summery: string;
+  summary: string;
 }
 
 export interface Company {

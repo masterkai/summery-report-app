@@ -3,10 +3,21 @@
     <div class="report-selector">
       <p-select [options]="companies"
                 [(ngModel)]="selectedCompany"
+                (ngModelChange)="onFilterSummaries($event)"
                 optionLabel="name"
                 placeholder="選一個公司"
                 class="w-full md:w-56"
       />
+      <p-multiselect
+        [options]="filteredSummaries()"
+        [(ngModel)]="selectedSummaries"
+        optionLabel="summary"
+        placeholder="選擇摘要報告"
+        [maxSelectedLabels]="1"
+        styleClass="w-full md:w-80"
+        filter="false"
+      ></p-multiselect>
+
     </div>
     <div class="theme-selector"></div>
   </div>
