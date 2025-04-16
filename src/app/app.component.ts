@@ -7,10 +7,11 @@ import {Button} from 'primeng/button';
 import {Tab, TabList, TabPanel, TabPanels, Tabs} from 'primeng/tabs';
 import {Dialog} from 'primeng/dialog';
 import {ReportGeneratorComponent} from './shared/components/report-generator/report-generator.component';
+import {SummeryCompareUiComponent} from './shared/components/summery-compare-ui/summery-compare-ui.component';
 
 @Component({
   selector: 'app-root',
-  imports: [SummeryListComponent, FormsModule, ContainerComponent, Button, Tabs, TabList, Tab, TabPanels, TabPanel, ReportGeneratorComponent],
+  imports: [SummeryListComponent, FormsModule, ContainerComponent, Button, Tabs, TabList, Tab, TabPanels, TabPanel, ReportGeneratorComponent, SummeryCompareUiComponent],
   templateUrl: './app.component.html',
   standalone: true,
   styleUrl: './app.component.scss'
