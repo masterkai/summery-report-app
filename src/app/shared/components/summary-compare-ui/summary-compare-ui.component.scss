@@ -15,10 +15,26 @@
     gap: 1rem;
   }
   .theme-selector {
+    .title-checkbox {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .checkbox-group {
+      .check-item {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
     flex: 1 1 60%;
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
+    flex-direction: column;
     gap: 1rem;
   }
 
