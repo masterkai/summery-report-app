@@ -3,15 +3,28 @@
   [formGroup]="form"
 >
   <!-- Select All -->
-  <label class="title-checkbox">
-    <input type="checkbox" formControlName="selectAll" />
-    選擇主題
-  </label>
+  <div class="title-checkbox">
+    <div class="check-item">
+      <label class="input-container">
+        <input
+          class="toggle-input"
+          type="checkbox"
+          formControlName="selectAll"
+        />
+        選擇主題
+      </label>
+    </div>
+  </div>
+
 
   <div class="checkbox-group" formArrayName="options">
-    <div  *ngFor="let ctrl of options.controls; let i = index">
-      <label>
-        <input type="checkbox" [formControlName]="i" />
+    <div class="check-item"  *ngFor="let ctrl of options.controls; let i = index">
+      <label class="input-container">
+        <input
+          class="toggle-input"
+          type="checkbox"
+          [formControlName]="i"
+        />
         {{ optionLabels[i] }}
       </label>
     </div>
