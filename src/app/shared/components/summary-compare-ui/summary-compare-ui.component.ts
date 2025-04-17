@@ -73,6 +73,10 @@ export class SummaryCompareUiComponent implements OnInit {
   onOptionsChanged($event: string[]) {
     this.selectedOptions = $event
   }
+
+  removeSummery(summary: Summary) {
+    this.selectedSummaries = this.selectedSummaries.filter(s => s !== summary);
+  }
 }
 
 interface Theme {

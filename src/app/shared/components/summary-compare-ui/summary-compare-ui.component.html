@@ -24,9 +24,15 @@
   </div>
   <div class="selected-summaries">
     <div class="title">選擇結果(上限為5，請致少選擇兩份文件)</div>
-    <div class="result-block">@for (summary of selectedSummaries; track summary.summary) {
-      <p-chip label="{{summary.summary}}"/>
-    }</div>
+    @if (selectedSummaries) {
+      <div class="result-block">@for (summary of selectedSummaries; track summary.summary) {
+        <p-chip
+          (onRemove)="removeSummery(summary)"
+          label="{{summary.summary}}"
+          [removable]="true"
+        />
+      }</div>
+    }
   </div>
   <div class="submit-block">
     <p-button
