@@ -1,7 +1,7 @@
 $digi-orange: #FFA500;
 $digi-black: #000000;
 $checkbox-size: 24px;
-$check-icon: 12px;
+$check-icon: 24px;
 $border-radius-unit: 4px;
 $frame-border: #ccc;
 .theme-selector {
@@ -18,7 +18,7 @@ $frame-border: #ccc;
             content: "";
             background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="white" class="bi bi-check" viewBox="0 0 16 16"><path d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425z"/></svg>');
             background-repeat: no-repeat;
-            background-size: 16px;
+            background-size: $check-icon;
             background-position: center;
             height: $check-icon;
             width: $check-icon;
@@ -88,7 +88,7 @@ $frame-border: #ccc;
             content: "";
             background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="white" class="bi bi-check" viewBox="0 0 16 16"><path d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425z"/></svg>');
             background-repeat: no-repeat;
-            background-size: 16px;
+            background-size: $check-icon;
             background-position: center;
             height: $check-icon;
             width: $check-icon;
