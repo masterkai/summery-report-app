@@ -19,7 +19,7 @@
               (onUpload)="onBasicUploadAuto($event)" [auto]="true" chooseLabel="選取檔案"/>
           </div>
           <div *ngIf="fileName" class="file-name">
-            <i class="pi pi-file-word" style="color:#000"></i>
+            <i class="pi pi-file-word" style="color:#000;margin-right: 4px;"></i>
             <p>{{ fileName }}</p>
             <i
               (click)="onRemoveFile()"
@@ -59,7 +59,7 @@
           >
             <label>*選擇分析模式</label>
             <div
-              class="field-checkbox"
+              class="field-radio"
               *ngFor="let category of categories; trackBy: trackByCategoryName"
             >
               <p-radiobutton [inputId]="category.key" [value]="category"
