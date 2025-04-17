@@ -45,7 +45,7 @@ export class SummaryCompareUiComponent implements OnInit {
   ];
 
   filteredSummaries = signal<Summary[]>([]);
-  selectedSummaries!: Summary[];
+  selectedSummaries: Summary[] = [];
   selectedCompany!: Company;
 
   async ngOnInit() {
