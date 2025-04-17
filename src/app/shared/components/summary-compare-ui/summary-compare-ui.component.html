@@ -14,12 +14,19 @@
         optionLabel="summary"
         placeholder="選擇摘要報告"
         [maxSelectedLabels]="1"
+        [selectionLimit]="5"
         styleClass="w-full md:w-80"
         filter="false"
       ></p-multiselect>
 
     </div>
     <app-checkbox-group (selectedOptionsChange)="onOptionsChanged($event)" />
+  </div>
+  <div class="selected-summaries">
+    <div class="title">選擇結果(上限為5，請致少選擇兩份文件)</div>
+    <div class="result-block">@for (summary of selectedSummaries; track summary.summary) {
+      <p-chip label="{{summary.summary}}"/>
+    }</div>
   </div>
   <div class="submit-block">
     <p-button

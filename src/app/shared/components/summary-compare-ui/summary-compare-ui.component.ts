@@ -4,7 +4,7 @@ import { Company, Summary } from '../../../../domain/summary';
 import { SummaryService } from '../../../summary/summary.service';
 import { FormsModule } from '@angular/forms';
 import { MultiSelectModule } from 'primeng/multiselect';
-import { Checkbox } from 'primeng/checkbox';
+import { ChipModule } from 'primeng/chip';
 import { CommonModule } from '@angular/common';
 import { CheckboxGroupComponent } from '../checkbox-group/checkbox-group.component';
 import { Button } from 'primeng/button';
@@ -17,7 +17,8 @@ import { Button } from 'primeng/button';
     FormsModule,
     CommonModule,
     CheckboxGroupComponent,
-    Button
+    Button,
+    ChipModule
   ],
   templateUrl: './summary-compare-ui.component.html',
   styleUrl: './summary-compare-ui.component.scss'
@@ -42,12 +43,9 @@ export class SummaryCompareUiComponent implements OnInit {
     { name: '雲端及AI營運回顧', key: '雲端及AI營運回顧' },
     { name: '雲端及AI營運展望', key: '雲端及AI營運展望' },
   ];
-  themeAll: Theme = { name: '選擇主題', key: '選擇主題' };
-  allThemesChecked = false;
 
   filteredSummaries = signal<Summary[]>([]);
   selectedSummaries!: Summary[];
-  selectedThemes!: Theme[];
   selectedCompany!: Company;
 
   async ngOnInit() {
