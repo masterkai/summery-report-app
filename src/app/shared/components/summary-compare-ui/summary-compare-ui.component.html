@@ -24,7 +24,7 @@
   </div>
   <div class="selected-summaries">
     <div class="title">選擇結果(上限為5，請致少選擇兩份文件)</div>
-    @if (selectedSummaries) {
+    @if (selectedSummaries.length) {
       <div class="result-block">@for (summary of selectedSummaries; track summary.summary) {
         <p-chip
           (onRemove)="removeSummery(summary)"
