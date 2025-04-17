@@ -16,7 +16,6 @@ import { Button } from 'primeng/button';
     MultiSelectModule,
     FormsModule,
     CommonModule,
-    Checkbox,
     CheckboxGroupComponent,
     Button
   ],

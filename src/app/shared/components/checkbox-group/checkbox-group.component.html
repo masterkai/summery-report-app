@@ -1,12 +1,15 @@
-<form [formGroup]="form">
+<form
+  class="theme-selector"
+  [formGroup]="form"
+>
   <!-- Select All -->
-  <label>
+  <label class="title-checkbox">
     <input type="checkbox" formControlName="selectAll" />
     選擇主題
   </label>
 
-  <div formArrayName="options">
-    <div *ngFor="let ctrl of options.controls; let i = index">
+  <div class="checkbox-group" formArrayName="options">
+    <div  *ngFor="let ctrl of options.controls; let i = index">
       <label>
         <input type="checkbox" [formControlName]="i" />
         {{ optionLabels[i] }}

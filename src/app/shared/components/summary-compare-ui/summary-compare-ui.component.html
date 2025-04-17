@@ -19,31 +19,12 @@
       ></p-multiselect>
 
     </div>
-    <div class="theme-selector">
-      <app-checkbox-group (selectedOptionsChange)="onOptionsChanged($event)" />
-      <div class="title-checkbox">
-        <p-checkbox
-          [inputId]="themeAll.key"
-          name="group"
-          [value]="themeAll"
-          [(ngModel)]="allThemesChecked"
-          [binary]="true"
-        />
-        <label [for]="themeAll.key" class="ml-2"> 選擇主題 </label>
-      </div>
-      <div class="checkbox-group">
-        <div *ngFor="let theme of themes" class="check-item">
-          <p-checkbox
-            [inputId]="theme.key"
-            name="group" [value]="theme"
-            [(ngModel)]="selectedThemes"
-          />
-          <label [for]="theme.key" class="ml-2"> {{ theme.name }} </label>
-        </div>
-      </div>
-    </div>
+    <app-checkbox-group (selectedOptionsChange)="onOptionsChanged($event)" />
   </div>
   <div class="submit-block">
-    <p-button label="產生摘要報告" (click)="onGenerateReport()" />
+    <p-button
+      label="產生摘要報告"
+      (click)="onGenerateReport()"
+    />
   </div>
 </div>

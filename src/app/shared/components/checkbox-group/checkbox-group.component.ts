@@ -1,15 +1,16 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormArray, FormBuilder, FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { NgForOf } from '@angular/common';
+import { Checkbox } from 'primeng/checkbox';
 
 @Component({
   selector: 'app-checkbox-group',
   imports: [
     ReactiveFormsModule,
-    NgForOf
+    NgForOf,
   ],
   templateUrl: './checkbox-group.component.html',
-  styleUrl: './checkbox-group.component.css'
+  styleUrl: './checkbox-group.component.scss'
 })
 export class CheckboxGroupComponent implements OnInit {
   @Output() selectedOptionsChange = new EventEmitter<string[]>();
