@@ -6,7 +6,9 @@
             placeholder="選一個公司"
             class="w-full md:w-56"
   />
-  <p-button label="reset" (click)="onReset()" />
+  @if (selectedCompany) {
+    <p-button label="重置" (click)="onReset()" />
+  }
 </div>
 
 <div class="card">
