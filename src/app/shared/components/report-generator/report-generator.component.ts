@@ -69,4 +69,9 @@ export class ReportGeneratorComponent implements  OnInit {
   trackByCategoryName(index: number, category: { name: string; key: string }): string {
     return category.name;
   }
+
+  onRemoveFile() {
+    this.fileName = null; // Clear the file name
+    this.messageService.add({ severity: 'info', summary: 'Success', detail: 'File Removed' });
+  }
 }
