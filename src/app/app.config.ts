@@ -6,7 +6,7 @@ import Aura from '@primeng/themes/aura';
 import { routes } from './app.routes';
 import {MessageService} from 'primeng/api';
 import {provideHttpClient} from '@angular/common/http';
-
+import MyPreset from '../mypreset';
 export const appConfig: ApplicationConfig = {
   providers: [
     MessageService,
@@ -16,7 +16,7 @@ export const appConfig: ApplicationConfig = {
     provideHttpClient(),
     providePrimeNG({
       theme: {
-        preset: Aura,
+        preset: MyPreset,
         options: {
           darkModeSelector: 'none'
         }
