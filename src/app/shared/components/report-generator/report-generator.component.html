@@ -1,79 +1,73 @@
-@if (show) {
-  <div class="dialog-backdrop">
-    <div class="dialog-box">
-      <div class="dialog-header">
-        <div class="title">上傳檔案，由 LLM_生成法說會摘要報告</div>
+<div class="dialog-box">
+  <div class="dialog-header">
+    <div class="title">上傳檔案，由 LLM_生成法說會摘要報告</div>
+  </div>
+
+  <div class="dialog-content">
+    <div class="upload-block">
+      <div class="file-upload">
+        <p-toast/>
+        <p-fileupload
+          mode="basic"
+          name="demo[]"
+          chooseIcon="pi pi-upload"
+          url="https://www.primefaces.org/cdn/api/upload.php" accept=".txt" maxFileSize="1000000"
+          (onUpload)="onBasicUploadAuto($event)" [auto]="true" chooseLabel="選取檔案"/>
       </div>
-      <i class="pi pi-times close-btn" (click)="onClose()" style="color:#000;cursor: pointer;"></i>
-
-      <div class="dialog-content">
-        <div class="upload-block">
-          <div class="file-upload">
-            <p-toast/>
-            <p-fileupload
-
-              mode="basic"
-              name="demo[]"
-              chooseIcon="pi pi-upload"
-              url="https://www.primefaces.org/cdn/api/upload.php" accept=".txt" maxFileSize="1000000"
-              (onUpload)="onBasicUploadAuto($event)" [auto]="true" chooseLabel="選取檔案"/>
-          </div>
-          <div *ngIf="fileName" class="file-name">
-            <i class="pi pi-file-word" style="color:#000;margin-right: 4px;"></i>
-            <p>{{ fileName }}</p>
-            <i
-              (click)="onRemoveFile()"
-              class="pi pi-times"
-              style="color:#000;cursor: pointer"
-            ></i>
-          </div>
-          <!--或 輸入網址-->
-          <div class="enter-file-link">
-            <label for="username">或 輸入網址</label>
-            <input pInputText id="username" aria-describedby="username-help" [(ngModel)]="value"/>
-          </div>
-        </div>
-        <div class="input-block">
-          <div
-            class="generic-input"
-          >
-            <label for="company-name">*公司名稱</label>
-            <input pInputText id="company-name" aria-describedby="company-name-help" [(ngModel)]="companyName"/>
-            <small id="company-name-help">請手動輸入公司名稱。</small>
-          </div>
-          <div
-            class="generic-input"
-          >
-            <label>*季度</label>
-            <div class="quarter-input-block">
-              <p-select [options]="years" [(ngModel)]="selectedYear" optionLabel="year" placeholder="選擇西元年"
-                        class="w-full md:w-56"/>
-              <p-select [options]="quarters" [(ngModel)]="selectedQuarter" optionLabel="quarter"
-                        placeholder="選擇季度" class="w-full md:w-56"/>
-            </div>
-            <small id="quarter-help">請選擇西元年與季度</small>
-          </div>
-          <form
-            class="generic-input"
-            [formGroup]="formGroup"
-          >
-            <label>*選擇分析模式</label>
-            <div
-              class="field-radio"
-              *ngFor="let category of categories; trackBy: trackByCategoryName"
-            >
-              <p-radiobutton [inputId]="category.key" [value]="category"
-                             formControlName="selectedCategory"></p-radiobutton>
-              <label [for]="category.key" class="ml-2">{{ category.name }}</label>
-            </div>
-
-          </form>
-        </div>
+      <div *ngIf="fileName" class="file-name">
+        <i class="pi pi-file-word" style="color:#000;margin-right: 4px;"></i>
+        <p>{{ fileName }}</p>
+        <i
+          (click)="onRemoveFile()"
+          class="pi pi-times"
+          style="color:#000;cursor: pointer"
+        ></i>
       </div>
-      <div class="submit-block">
-        <p-button label="產生摘要報告"/>
+      <!--或 輸入網址-->
+      <div class="enter-file-link">
+        <label for="username">或 輸入網址</label>
+        <input pInputText id="username" aria-describedby="username-help" [(ngModel)]="value"/>
       </div>
     </div>
+    <div class="input-block">
+      <div
+        class="generic-input"
+      >
+        <label for="company-name">*公司名稱</label>
+        <input pInputText id="company-name" aria-describedby="company-name-help" [(ngModel)]="companyName"/>
+        <small id="company-name-help">請手動輸入公司名稱。</small>
+      </div>
+      <div
+        class="generic-input"
+      >
+        <label>*季度</label>
+        <div class="quarter-input-block">
+          <p-select [options]="years" [(ngModel)]="selectedYear" optionLabel="year" placeholder="選擇西元年"
+                    class="w-full md:w-56"/>
+          <p-select [options]="quarters" [(ngModel)]="selectedQuarter" optionLabel="quarter"
+                    placeholder="選擇季度" class="w-full md:w-56"/>
+        </div>
+        <small id="quarter-help">請選擇西元年與季度</small>
+      </div>
+      <form
+        class="generic-input"
+        [formGroup]="formGroup"
+      >
+        <label>*選擇分析模式</label>
+        <div
+          class="field-radio"
+          *ngFor="let category of categories; trackBy: trackByCategoryName"
+        >
+          <p-radiobutton [inputId]="category.key" [value]="category"
+                         formControlName="selectedCategory"></p-radiobutton>
+          <label [for]="category.key" class="ml-2">{{ category.name }}</label>
+        </div>
+
+      </form>
+    </div>
   </div>
-}
+  <div class="submit-block">
+    <p-button label="產生摘要報告"/>
+  </div>
+</div>
 

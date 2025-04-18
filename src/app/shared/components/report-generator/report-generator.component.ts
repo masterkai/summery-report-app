@@ -30,8 +30,6 @@ import {Select} from 'primeng/select';
 })
 export class ReportGeneratorComponent implements  OnInit {
   constructor(private messageService: MessageService) { }
-  @Input() show = false;
-  @Output() close = new EventEmitter<void>();
   fileName: string | null = null; // Property to store the file name
   companyName: string | undefined;
   years: Year[] | undefined;
@@ -45,10 +43,6 @@ export class ReportGeneratorComponent implements  OnInit {
     { name: '單次分析', key: 'S' },
     { name: '雙重分析 (更全面但需要更多時間)', key: 'D' },
   ];
-
-  onClose() {
-    this.close.emit();
-  }
 
   onBasicUploadAuto(event: FileUploadEvent) {
     console.log(event.files[0]);

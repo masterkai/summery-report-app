@@ -9,7 +9,10 @@
     />
   </div>
 
-  <app-report-generator [show]="isDialogVisible" (close)="closeDialog()" />
+
+  <app-common-dialog>
+    <app-report-generator />
+  </app-common-dialog>
 
   <p-tabs value="0">
     <p-tablist>
