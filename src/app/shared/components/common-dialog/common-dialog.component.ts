@@ -6,7 +6,6 @@ import { Button } from 'primeng/button';
   selector: 'app-common-dialog',
   imports: [
     Dialog,
-    Button
   ],
   templateUrl: './common-dialog.component.html',
   styleUrl: './common-dialog.component.css'

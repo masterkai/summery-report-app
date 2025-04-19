@@ -32,8 +32,13 @@
         <td>{{ summery.company }}</td>
         <td>{{ summery.quarter }}</td>
         <td>{{ summery.original }}</td>
-        <td>{{ summery.summary }}</td>
+        <td (click)="openDialog(summery)">{{ summery.summary }}</td>
       </tr>
     </ng-template>
   </p-table>
+  <app-common-dialog>
+    <div>
+      {{selectedSummary()?.summary}}
+    </div>
+  </app-common-dialog>
 </div>
